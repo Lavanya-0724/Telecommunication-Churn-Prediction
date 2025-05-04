@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Include Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- Include jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+	<!-- Include Popper.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  
+	<!-- Include Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+  <style>
+    /* Internal CSS code */
+    body {
+		font-family: 'Kanit', sans-serif;
+	  background-color: #e6e6e6;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      margin-bottom: 40px;
+	  
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+	  margin-left : 44px;
+    }
+	.output{
+		margin-top:10px;
+	}
+	.form-control{
+		background-color: #f7f7f7;
+		border: #f7f7f7;
+        text-decoration: none;
+        outline: none;
+	}
+    .purple-border {
+	  background-color: #f7f7f7;
+      border: 1px solid #f7f7f7;
+      border-radius: 5px;
+      padding: 10px;
+    }
+	.btn-primary:hover {
+		background-color: green;
+	  }
+	.btn-primary {
+		background-color: rgb(0, 0, 0);
+		border: black;
+	  }
+	  
+    .center-heading {
+      text-align: center;
+	  margin-top: 40px;
+	  margin-bottom: 30px;
+    }
+	.footer {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="center-heading">Telecommunication Churn Prediction </h1>
+      </div>
+    </div>
+    <div class="form-container">
+
+		  <form action="http://localhost:5000/" method="POST">
+			<div class="row">
+
+				<div class="col-sm-4">
+				  <div class="form-group purple-border">
+					<label for="query1">Senior Citizen:</label>
+					<select class="form-control" id="query1" name="query1" autofocus>
+					  <option value="Yes">Yes</option>
+					  <option value="No">No</option>
+					</select>
+				  </div>
+				</div>
+				
+				<div class="col-sm-4">
+					<div class="form-group purple-border">
+					  <label for="query2">Monthly Charges:</label>
+					  <input type="number" class="form-control" id="query2" name="query2" value="0">
+					</div>
+				  </div>
+				  
+				  <div class="col-sm-4">
+					<div class="form-group purple-border">
+					  <label for="query3">Total Charges:</label>
+					  <input type="number" class="form-control" id="query3" name="query3" value="0" autofocus>
+					</div>
+				  </div>  
+			  </div>
+
+			  <div class="row">
+				<div class="col-sm-4">
+				<div class="form-group purple-border">
+					<label for="query4">Gender:</label>
+					<select class="form-control" id="query4" name="query4" autofocus>
+					  <option value="Male">Male</option>
+					  <option value="Female">Female</option>
+					</select>
+				  </div>
+				  </div>
+
+				  <div class="col-sm-4">
+				  <div class="form-group purple-border">
+					<label for="query5">Partner:</label>
+					<select class="form-control" id="query5" name="query5" autofocus>
+					  <option value="Yes">Yes</option>
+					  <option value="No">No</option>
+					</select>
+				  </div>
+				  </div>
+				  
+				  <div class="col-sm-4">
+				  <div class="form-group purple-border">
+					<label for="query6">Dependents:</label>
+					<select class="form-control" id="query6" name="query6" autofocus>
+					  <option value="Yes">Yes</option>
+					  <option value="No">No</option>
+					</select>
+				  </div>
+				  </div>
+				  
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="form-group purple-border">
+					<label for="query7">PhoneService:</label>
+					<select class="form-control" id="query7" name="query7" autofocus>
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="form-group purple-border">
+					<label for="query8">MultipleLines:</label>
+					<select class="form-control" id="query8" name="query8" autofocus>
+						<option value="No phone service">No phone service</option>
+						<option value="No">No</option>
+						<option value="Yes">Yes</option>
+					</select>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="form-group purple-border">
+					<label for="query9">InternetService:</label>
+					<select class="form-control" id="query9" name="query9" autofocus>
+						<option value="DSL">DSL</option>
+						<option value="Fiber optic">Fiber optic</option>
+						<option value="No">No</option>
+					</select>
+					</div>
+				</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-sm-4">
+					  <div class="form-group purple-border">
+						<label for="query10">OnlineSecurity:</label>
+						<select class="form-control" id="query10" name="query10" autofocus>
+						  <option value="Yes">Yes</option>
+						  <option value="No">No</option>
+						</select>
+					  </div>
+					</div>
+				  
+					<div class="col-sm-4">
+					  <div class="form-group purple-border">
+						<label for="query11">OnlineBackup:</label>
+						<select class="form-control" id="query11" name="query11" autofocus>
+						  <option value="Yes">Yes</option>
+						  <option value="No">No</option>
+						</select>
+					  </div>
+					</div>
+				  
+					<div class="col-sm-4">
+					  <div class="form-group purple-border">
+						<label for="query12">DeviceProtection:</label>
+						<select class="form-control" id="query12" name="query12" autofocus>
+						  <option value="Yes">Yes</option>
+						  <option value="No">No</option>
+						</select>
+					  </div>
+					</div>
+				  </div>
+				  
+
+				  <div class="row">
+					<div class="col-sm-4">
+					  <div class="form-group purple-border">
+						<label for="query13">TechSupport:</label>
+						<select class="form-control" id="query13" name="query13" autofocus>
+						  <option value="Yes">Yes</option>
+						  <option value="No">No</option>
+						</select>
+					  </div>
+					</div>
+				  
+					<div class="col-sm-4">
+					  <div class="form-group purple-border">
+						<label for="query14">StreamingTV:</label>
+						<select class="form-control" id="query14" name="query14" autofocus>
+						  <option value="Yes">Yes</option>
+						  <option value="No">No</option>
+						</select>
+					  </div>
+					</div>
+				  
+					<div class="col-sm-4">
+					  <div class="form-group purple-border">
+						<label for="query15">StreamingMovies:</label>
+						<select class="form-control" id="query15" name="query15" autofocus>
+						  <option value="Yes">Yes</option>
+						  <option value="No">No</option>
+						</select>
+					  </div>
+					</div>
+				  </div>
+				  
+				  <div class="row">
+					<div class="col-sm-4">
+					  <div class="form-group purple-border">
+						<label for="query16">Contract:</label>
+						<select class="form-control" id="query16" name="query16" autofocus>
+						  <option value="Month-to-month">Month-to-month</option>
+						  <option value="One year">One year</option>
+						  <option value="Two year">Two year</option>
+						</select>
+					  </div>
+					</div>
+				  
+					<div class="col-sm-4">
+					  <div class="form-group purple-border">
+						<label for="query17">PaperlessBilling:</label>
+						<select class="form-control" id="query17" name="query17" autofocus>
+						  <option value="Yes">Yes</option>
+						  <option value="No">No</option>
+						</select>
+					  </div>
+					</div>
+				  
+					<div class="col-sm-4">
+					  <div class="form-group purple-border">
+						<label for="query18">PaymentMethod:</label>
+						<select class="form-control" id="query18" name="query18" autofocus>
+						  <option value="Electronic check">Electronic check</option>
+						  <option value="Mailed check">Mailed check</option>
+						  <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+						  <option value="Credit card (automatic)">Credit card (automatic)</option>
+						</select>
+					  </div>
+					</div>
+				  </div>
+
+				  <div class="col-sm-4">
+				  <div class="form-group purple-border">
+					<label for="query19">Tenure:</label>
+					<input type="number" class="form-control" id="query19" name="query19" value="0" autofocus>
+				  </div>
+				  </div>
+				  
+				  <div class="col-sm-33 text-center">
+					<button type="submit" class="btn btn-primary btn-lg bg-black" name="submit">SUBMIT</button>
+
+					<button type="button" class="btn btn-primary btn-lg bg-black" name="reset" onclick="window.location.href='http://localhost:5000/'">RESET</button>
+
+				  </div>
+				  
+				  
+			</form>
+		  </div>
+		</div>
+	  </div>
+	  </div>
+		  
+	  <div class="container">
+		<div class="form-container">
+		<div class="row"> 
+			<div class="col-sm-11">
+
+			<textarea class="form-control" rows="2" id="comment" name="query6" rows="2" placeholder="Likeliness to churn" cols="5" autofocus>{{output1}}</textarea>
+
+			<textarea class="form-control output"  rows="2" id="comment" name="query7" rows="2" placeholder="Churn Percentage:" cols="5" autofocus>{{output2}}</textarea>
+
+			<textarea class="form-control output"  rows="10" id="comment" name="query8" rows="2" placeholder="Churn Reasons:" cols="5" required spellcheck="false" style="line-height: 2.5;" autofocus>{{output3}}</textarea>
+
+			</div>
+			<div class="col-sm-50">
+			<img src="data:image/png;base64,{{ image_base64 }}" alt="Feature Importance" />
+		</div>	
+		</div>
+		</div>
+	</div>		
+	</div>
+	<div class="footer">
+		&copy; 2023 Telecom Churn Prediction Results. Team 5G.
+	  </div>		
+   </body>
+</html>

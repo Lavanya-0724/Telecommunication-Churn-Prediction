@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Excel File Upload</title>
+    <style>
+      .file_label {
+        font-size: 22px;
+        display: inline-block;
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .file_label:hover {
+        background-color: #45a049;
+      }
+
+      .file_label:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .file_label span {
+        margin-right: 10px;
+      }
+
+      /* Hide the actual file input */
+      input[type="file"] {
+        display: none;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      form {
+        background-color: #fff;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="file"] {
+        display: block;
+        margin: 10px 0;
+      }
+      .selected_file {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 22px;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .logo {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .logo img {
+        max-width: 200px;
+        height: auto;
+      }
+      .footer {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+    </style>
+    <script>
+      function showFileName(event) {
+        const input = event.target;
+        const fileName = input.files[0].name;
+        const selectedFileElement = document.getElementById("selected_file");
+        selectedFileElement.textContent = "Selected File: " + fileName;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Telecommunication Churn Prediction</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div style="text-align: center">
+        <div class="logo">
+          <img
+            src="{{ url_for('static', filename='upload.png') }}"
+            alt="Logo"
+          />
+        </div>
+        <label for="file_input" class="file_label">
+          <span>Choose File</span>
+        </label>
+        <input
+          type="file"
+          name="excel_file"
+          id="file_input"
+          accept=".xls,.xlsx"
+          style="display: none"
+          onchange="showFileName(event)"
+        />
+        <div class="selected_file" id="selected_file"></div>
+
+        <input type="submit" value="Upload" />
+      </div>
+    </form>
+    <div class="footer">
+      &copy; 2023 Telecom Churn Prediction Results. Team 5G.
+    </div>
+  </body>
+</html>

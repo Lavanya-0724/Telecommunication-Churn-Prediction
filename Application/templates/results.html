@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediction Results</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding-top: 50px;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .container {
+        flex: 1;
+      }
+
+      .dataframe {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 90%; /* Adjust the width as desired */
+        margin: 0 auto;
+        text-align: center; /* Center the table horizontally */
+      }
+
+      .dataframe th {
+        font-weight: bold;
+        text-align: center;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        width: 20%;
+      }
+
+      .dataframe td {
+        text-align: center;
+        padding: 10px; /* Add some padding for better visibility */
+        width: 20%; /* Adjust the width as desired */
+      }
+
+      .dataframe tr:nth-child(odd) {
+        background-color: #f8f9fa; /* Set the background color for odd rows */
+      }
+
+      .dataframe tr:nth-child(even) {
+        background-color: lightgrey; /* Set the background color for even rows */
+      }
+
+      .footer {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .btn-primary:hover {
+        background-color: green;
+      }
+      .btn-primary {
+        background-color: rgb(0, 0, 0);
+        border: black;
+        width: 83px;
+        color: white;
+        height: 45px;
+        margin-top: -25px;
+        margin-left: 58px;
+        font-family: sans-serif;
+        font-size: medium;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      type="button"
+      class="btn btn-primary btn-lg bg-black"
+      name="home"
+      onclick="window.location.href='http://localhost:5000/'"
+    >
+      Home
+    </button>
+    <h1 style="text-align: center">Prediction Results</h1>
+    <div class="container">
+      <table class="dataframe table" style="text-align: center">
+        {{ result_table|safe }}
+      </table>
+    </div>
+
+    <div class="footer">
+      &copy; 2023 Telecom Churn Prediction Results. Team 5G.
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
